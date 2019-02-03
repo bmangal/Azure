@@ -12,11 +12,18 @@
             <ColumnDefinition Width="441*"/>
             <ColumnDefinition Width="69*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dataGridIssues" HorizontalAlignment="Left" Margin="3,10,0,0" VerticalAlignment="Top" Height="127" Width="610" Grid.Column="1" Grid.ColumnSpan="2">
+        <DataGrid x:Name="dataGridIssues" HorizontalAlignment="Left" Margin="3,10,0,0" VerticalAlignment="Top" Height="152" Width="610" Grid.Column="1" Grid.ColumnSpan="2">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Width="200" Binding="{Binding Name}" IsReadOnly="True" />
-                <DataGridTextColumn Header="Cost" Width="200" Binding="{Binding Cost}" IsReadOnly="True" />
-                <DataGridTextColumn Header="Win Factor" Width="200" Binding="{Binding WinFactor}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Name" Width="170" Binding="{Binding Name}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Cost" Width="170" Binding="{Binding Cost}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Win Factor" Width="170" Binding="{Binding WinFactor}" IsReadOnly="True" />
+                <DataGridTemplateColumn Width="70">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="RemoveIssue">Remove</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Label x:Name="label" Content="Name" HorizontalAlignment="Left" Margin="3,176,0,0" VerticalAlignment="Top" Grid.Column="1"/>
@@ -26,7 +33,7 @@
         <Label x:Name="label2" Content="Win Factor" HorizontalAlignment="Left" Margin="304,176,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <TextBox x:Name="textBoxWinFactor" HorizontalAlignment="Left" Height="23" Margin="371,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Grid.Column="1"/>
         <Button x:Name="buttonAddTask" Content="Add Task" HorizontalAlignment="Left" Margin="484,176,0,0" VerticalAlignment="Top" Width="129" Click="buttonAddTask_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <DataGrid x:Name="dataGridIterations" HorizontalAlignment="Left" Margin="3,248,0,0" VerticalAlignment="Top" Height="210" Width="610" Grid.Column="1" Grid.ColumnSpan="2">
+        <DataGrid x:Name="dataGridIterations" HorizontalAlignment="Left" Margin="3,244,0,0" VerticalAlignment="Top" Height="210" Width="610" Grid.Column="1" Grid.ColumnSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Sprint" Width="60" Binding="{Binding Sprint}" IsReadOnly="True" />
                 <DataGridTextColumn Header="Name" Width="180" Binding="{Binding Name}" IsReadOnly="True" />

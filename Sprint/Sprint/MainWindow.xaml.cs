@@ -35,9 +35,9 @@ namespace Sprint
             _issues.Add(new Issue() { Name = "Issue 2", Cost = 3, WinFactor = 3 });
             _issues.Add(new Issue() { Name = "Issue 3", Cost = 3, WinFactor = 3 });
             _issues.Add(new Issue() { Name = "Issue 4", Cost = 4, WinFactor = 7 });
-            _issues.Add(new Issue() { Name = "Issue 5", Cost = 5, WinFactor = 10 });
+            //_issues.Add(new Issue() { Name = "Issue 5", Cost = 5, WinFactor = 10 });
+            _issues.Add(new Issue() { Name = "Issue 5", Cost = 10, WinFactor = 11 });
 
-            //this.dataGridIssues.Items.Clear();
             foreach (Issue issue in _issues)
             {
                 this.dataGridIssues.Items.Add(issue);
@@ -64,6 +64,12 @@ namespace Sprint
             }
         }
 
+        private void RemoveIssue(object sender, RoutedEventArgs e)
+        {
+            Issue issue = (sender as Button).DataContext as Issue;
+            this._issues.Remove(issue);
+            this.dataGridIssues.Items.Remove(issue);
+        }
         private void CalculateSprints()
         {
             this.dataGridIterations.Items.Clear();

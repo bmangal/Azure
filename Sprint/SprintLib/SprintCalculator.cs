@@ -8,6 +8,9 @@ namespace SprintLib
 {
     public class SprintCalculator
     {
+        private const int WINMULTIPLIER = 1;
+        private const int COSTMULTIPLIER = 1;
+
         public SprintCalculator(int capacity)
         {
             this.SprintCostCapactiy = capacity;
@@ -51,8 +54,11 @@ namespace SprintLib
 
             if (issues != null)
             {
-                // We want to address the Issues with higher Win value first
-                var orderedIssues = issues.OrderByDescending(o => o.WinFactor);
+                // We want to address the Issues with high Win Factor and low cost first
+                var orderedIssues = issues.OrderByDescending(o => o.WinFactor - o.Cost);
+
+                //Using Multiplier of 1 currently
+                //var orderedIssues = issues.OrderByDescending(o => (o.WinFactor * WINMULTIPLIER) - (o.Cost * COSTMULTIPLIER));
 
                 int totalCost = 0;
                 foreach (Issue issue in orderedIssues)

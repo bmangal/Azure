@@ -19,7 +19,8 @@ namespace SprintConsoleApp
                 new Issue() { Name = "Issue 2", Cost = 3, WinFactor = 3 },
                 new Issue() { Name = "Issue 3", Cost = 3, WinFactor = 3 },
                 new Issue() { Name = "Issue 4", Cost = 4, WinFactor = 7 },
-                new Issue() { Name = "Issue 5", Cost = 5, WinFactor = 10 },
+                //new Issue() { Name = "Issue 5", Cost = 5, WinFactor = 10 }
+                new Issue() { Name = "Issue 5", Cost = 10, WinFactor = 11 }
             };
 
             Dictionary<int, List<Issue>> iterations = sprintCalc.ArrangeIssues(issues);
